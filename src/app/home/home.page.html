@@ -1,0 +1,20 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      Youtube API
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card *ngFor = "let video of videos">
+  <img [src] = "video.snippet.thumbnails.high.url" />
+    <ion-card-content>
+      <ion-card-title>
+        {{video.snippet.title}}
+      </ion-card-title>
+    
+      <iframe  [src] ="video.id.videoId | youtube" width="560" height="100%" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </ion-card-content>
+  </ion-card>
+</ion-content>
